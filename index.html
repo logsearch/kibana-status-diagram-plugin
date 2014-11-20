@@ -1,0 +1,30 @@
+<div logsearch-status-app class="app-container status-container">
+  <nav ng-show="!appEmbedded" class="navbar navbar-default navbar-static-top">
+    <navbar>
+      <span class="name">
+        Status
+      </span>
+    </navbar>
+  </nav>
+  
+	<script type="text/ng-template" id="componentTree">
+		<tr>
+			<td class="status-ok">OK</td>
+			<td class="component-name">{{ component.key }}</td>
+		</tr>
+
+		<tr ng-if="component.children.buckets">
+			<td class="indent" colspan="2">
+				<table cellpadding="2">
+	        <div ng-repeat="component in component.children.buckets" ng-include="'componentTree'"></div>
+		    </table>
+	    </td>
+    </tr>
+	</script>
+
+	<div class="table-container">
+		<table cellpadding="2">
+	    <div ng-repeat="component in componentstatus.aggregations.children.buckets" ng-include="'componentTree'"></div>
+		</table>
+	</div>
+</div>

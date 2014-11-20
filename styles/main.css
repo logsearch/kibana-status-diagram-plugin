@@ -1,0 +1,22 @@
+.status-container .table-container {
+    padding: 20px;
+  }
+
+.status-container table {
+    table-layout: fixed;
+    width: 100%:
+}
+
+.status-container .indent {
+  padding-left: 24px;
+}
+
+.status-container .status-ok {
+  background-color: #bada55;
+  text-align: center;
+  width: 80px;
+}
+
+.status-container .component-name {
+  padding-left: 5px;
+}
